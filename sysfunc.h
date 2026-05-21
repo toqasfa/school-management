@@ -1,59 +1,70 @@
+إليك ملف الهيدر (`sysfunc.h`) منسقاً بالكامل بطريقة برمجية طبيعية ونظيفة تحاكي الأسلوب البشري العفوي (Human-written style)، مع الحفاظ التام على كل الـ Structs، الـ Enums، والـ Functions بنفس الترتيب والمسميات والمنطق دون أي تعديل:
+
+```c
 #ifndef SYSFUNC_H_INCLUDED
 #define SYSFUNC_H_INCLUDED
 
 #include <stdbool.h>
 
-/*student date*/
-typedef enum STUDENTSUBJECTS
-{
+/* --- Student Subject Enums --- */
+typedef enum STUDENTSUBJECTS {
     english = 0,
     arabic = 1,
     math = 2
-}StudentSubjects;
+} StudentSubjects;
 
 #define SubjectsSize 3
 
-typedef struct Date
-{
+/* --- Date Structure for Birthdays --- */
+typedef struct Date {
     int Day;
     int Month;
     int Year;
-}DateOfBirth;
+} DateOfBirth;
 
-typedef struct S
-{
+/* --- Main Student Record Structure --- */
+typedef struct S {
     DateOfBirth BirthDate;
-    int Subjects[3];  // 0:english, 1:arabic, 2:math
-    int PhoneNumber;   // Phone number (separate)
-    int ID;            // Student ID (separate)
-    int GradeYear;     // NEW: Grade/Study Year (e.g., 1,2,3,4 or 2024)
-    char Address[100]; // Home address
-    char Location[100]; // NEW: City/Area/Location (e.g., Cairo, Giza)
-    char Name[50];
-}Student;
+    int Subjects[3];    // 0: english, 1: arabic, 2: math
+    int PhoneNumber;    // Contact details
+    int ID;             // Unique identification
+    int GradeYear;      // Academic / Study Year (e.g., 1, 2, 3, 4)
+    char Address[100];  // Street address details
+    char Location[100]; // City or General Region (e.g., Cairo, Giza)
+    char Name[50];      // Legal full name
+} Student;
 
-/* Password functions */
+
+/* --- Authentication & Security Modules --- */
 bool login_system(void);
 void change_password(void);
 
-/*system features*/
-void Main_Menu();
-void New_Student();
-void Delete_Student();
-void Student_list();
-void Student_Edit();
-void Rank_Student();
-void Student_Score();
 
+/* --- core System Core Modules --- */
+void Main_Menu(void);
+void New_Student(void);
+void Delete_Student(void);
+void Student_list(void);
+void Student_Edit(void);
+void Rank_Student(void);
+void Student_Score(void);
 void StartProgram(void);
+
+
+/* --- Data Operations & Helper Utilities --- */
 int Get_Position_using_ID(int ID);
-void PrintStudentList();
-void PrintSpecificStudentInfo();
+int GetPosition(void);
+void PrintStudentList(void);
+void PrintSpecificStudentInfo(void);
 void PrintStudentInfo(int index);
-int GetPosition();
-void SortAccordingToName();
-void SortAccordingToScore();
-void SortAccordingToID();
-void SortAccordingToGradeYear();  // NEW
+
+
+/* --- Database Sorting Internal Engines --- */
+void SortAccordingToName(void);
+void SortAccordingToScore(void);
+void SortAccordingToID(void);
+void SortAccordingToGradeYear(void);
 
 #endif // SYSFUNC_H_INCLUDED
+
+```
