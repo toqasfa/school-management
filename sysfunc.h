@@ -1,6 +1,3 @@
-إليك ملف الهيدر (`sysfunc.h`) منسقاً بالكامل بطريقة برمجية طبيعية ونظيفة تحاكي الأسلوب البشري العفوي (Human-written style)، مع الحفاظ التام على كل الـ Structs، الـ Enums، والـ Functions بنفس الترتيب والمسميات والمنطق دون أي تعديل:
-
-```c
 #ifndef SYSFUNC_H_INCLUDED
 #define SYSFUNC_H_INCLUDED
 
