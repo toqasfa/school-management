@@ -1,0 +1,1 @@
+The Student Management System is a console-based application developed in C language for educational institutions to manage student records efficiently. The system provides a secure, password-protected interface for administrators to perform all essential student data operations.
